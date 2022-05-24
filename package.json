@@ -1,0 +1,20 @@
+{
+  "name": "mapty",
+  "version": "1.0.0",
+  "description": "An application for keeping exercise records in a map",
+  "browserslist": "> 0.25%, not dead",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "CHENG-HSIANG, WANG",
+  "license": "ISC",
+  "dependencies": {
+    "core-js": "^3.22.6",
+    "leaflet": "^1.8.0",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "parcel": "^2.5.0"
+  }
+}

@@ -1,57 +1,8 @@
-'use strict';
+import 'leaflet/dist/leaflet.css';
+import 'leaflet';
 
-class Workout {
-  date = new Date();
-  id = (Date.now() + '').slice(-10);
-  clicks = 0;
-
-  constructor(coords, distance, duration) {
-    this.coords = coords; // [lat, lng]
-    this.distance = distance; // km
-    this.duration = duration; // min
-  }
-
-  _setDescription() {
-    // prettier-ignore
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    this.description = `${this.type[0].toUpperCase() + this.type.slice(1)} on ${
-      months[this.date.getMonth()]
-    } ${this.date.getDate()}`;
-  }
-
-  click() {
-    this.clicks++;
-  }
-}
-
-class Running extends Workout {
-  type = 'running';
-  #markerId;
-  constructor(coords, distance, duration, cadence) {
-    super(coords, distance, duration);
-    this.cadence = cadence;
-    this.calcPace();
-    this._setDescription();
-  }
-  calcPace() {
-    // min/km
-    this.pace = this.duration / this.distance;
-  }
-}
-class Cycling extends Workout {
-  type = 'cycling';
-  #markerId;
-  constructor(coords, distance, duration, elevGain) {
-    super(coords, distance, duration);
-    this.elevGain = elevGain;
-    this.calcSpeed();
-    this._setDescription();
-  }
-  calcSpeed() {
-    // km/hr
-    this.speed = this.distance / (this.duration / 60);
-  }
-}
+import Running from './running.js';
+import Cycling from './cycling.js';
 
 // const run1 = new Running([23, 125], 10, 45, 170);
 // const cyc1 = new Cycling([24, 122], 50, 120, 330);
