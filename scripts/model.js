@@ -1,5 +1,5 @@
-import Running from './running.js';
-import Cycling from './cycling.js';
+import Running from './workouts/running.js';
+import Cycling from './workouts/cycling.js';
 
 /**
  * Get current location using geolocation API

@@ -2,8 +2,8 @@ import 'leaflet/dist/leaflet.css';
 import 'leaflet';
 
 import * as model from './model.js';
-import * as mapView from './mapView.js';
-import * as formView from './formView.js';
+import * as mapView from './views/mapView.js';
+import * as formView from './views/formView.js';
 
 //////////////////////////////////
 // Application Architecture
