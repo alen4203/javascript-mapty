@@ -55,7 +55,7 @@ export const renderWorkoutMarker = function (workout) {
       })
     )
     .setPopupContent(
-      `${this.type === 'running' ? '🏃‍♂️' : '🚴‍♀️'} ${workout.description}`
+      `${workout.type === 'running' ? '🏃‍♂️' : '🚴‍♀️'} ${workout.description}`
     )
     .openPopup();
 
