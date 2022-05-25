@@ -2,9 +2,9 @@ import Workout from './workout.js';
 export default class Cycling extends Workout {
   type = 'cycling';
   #markerId;
-  constructor(coords, distance, duration, elevGain) {
+  constructor(coords, distance, duration, elevation) {
     super(coords, distance, duration);
-    this.elevGain = elevGain;
+    this.elevation = elevation;
     this.calcSpeed();
     this._setDescription();
   }

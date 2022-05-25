@@ -4,7 +4,10 @@
   "description": "An application for keeping exercise records in a map",
   "browserslist": "> 0.25%, not dead",
   "scripts": {
-    "start": "parcel index.html",
+    "clean-dist": "rm -rf dist && mkdir dist",
+    "copy-images": "cp -r ./images ./dist",
+    "init": "npm run clean-dist && npm run copy-images",
+    "start": "npm run init && parcel index.html",
     "build": "parcel build index.html"
   },
   "author": "CHENG-HSIANG, WANG",
