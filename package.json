@@ -8,7 +8,7 @@
     "copy-images": "cp -r ./images ./dist",
     "init": "npm run clean-dist && npm run copy-images",
     "start": "npm run init && parcel index.html",
-    "build": "npm run init && parcel build index.html"
+    "build": "npm run init && parcel build --no-cache index.html"
   },
   "author": "CHENG-HSIANG, WANG",
   "license": "ISC",
