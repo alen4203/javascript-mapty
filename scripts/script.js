@@ -9,7 +9,7 @@ import * as formView from './views/formView.js';
 // Application Architecture
 
 class App {
-  #sort = false;
+  _sort = false;
   constructor() {
     // get position from geolocation
     this._loadMap();
@@ -82,7 +82,7 @@ class App {
       formView.renderWorkouts(model.state.workoutsArr);
 
       // When adding new workouts, the order could be wrong
-      this.#sort = false;
+      this._sort = false;
 
       // Hide form & clear input fields
       formView.hideForm();
@@ -90,6 +90,7 @@ class App {
       // Set local storage
       model.setLocalStorage();
     } catch (error) {
+      console.error(error);
       alert(error);
     }
   }
@@ -129,10 +130,10 @@ class App {
 
   _sortWorkouts() {
     // Change the sort state
-    this.#sort = !this.#sort;
+    this._sort = !this._sort;
 
     // Set workoutsArr in order (short -> long)
-    const newWorkoutsArr = model.sortWorkoutsArr(this.#sort ? true : false);
+    const newWorkoutsArr = model.sortWorkoutsArr(this._sort ? true : false);
 
     // Re-render workouts on view
     formView.clearWorkouts();
@@ -171,7 +172,7 @@ class App {
       const newMarker = mapView.renderWorkoutMarker(workout);
       model.addWorkoutMarker(workout, newMarker);
 
-      this.#sort = false;
+      this._sort = false;
 
       // set local storage
       model.setLocalStorage();
