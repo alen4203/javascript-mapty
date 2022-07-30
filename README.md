@@ -13,3 +13,5 @@ Functions includes but not merely:
 - center the record which is being selected
 
 The application has been deployed [here](https://mapty-alench.netlify.app/), feel free to have a try!
+
+Originated from a course on Udemy.
